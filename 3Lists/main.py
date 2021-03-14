@@ -14,22 +14,21 @@ def main():
     l2 = i2.split()
     l3 = i3.split()
 
-    len1 = len(l1)
-    len2 = len(l2)
-    len3 = len(l3)
-
-    r = max(len1, len2, len3)
-
     sum = 0
     lists = [l1, l2, l3]
 
     lists = sorted(lists, key=len)
 
+    len1 = len(lists[0])
+    len2 = len(lists[1])
+    len3 = len(lists[2])
+    r = max(len1, len2, len3)
+
     for i in range(r):
-        if i == len1 or i == len2:
+        if i == len1:
             lists.pop(0)
 
-        if i > len2 and i < len3:
+        if i == len2 and i < len3:
             sum += int(l3[i])
             continue
 
