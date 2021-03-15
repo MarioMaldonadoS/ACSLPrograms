@@ -27,12 +27,14 @@ def main():
     for i in range(r):
         if i == len1:
             lists.pop(0)
+        if i == len2:
+            lists.pop(0)
 
-        if i == len2 and i < len3:
-            sum += int(l3[i])
-            continue
+        if i < len2:
+            sum += compare(lists, i)
+        else:
+            sum += int(lists[0][i])
 
-        sum += compare(lists,i)
     print(sum)
 
 def compare(ls,i):
